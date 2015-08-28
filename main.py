@@ -2,6 +2,8 @@
 
 # Often bandwidth is given in megabits (Mb) per second whereas file size is given in megabytes (MB).
 
+import argparse
+
 def convert_seconds(sec):
     hourstring, minutestring, secondstring = "hour", "minute", "second" 
     hour1, minute1, second1 = "hour", "minute", "second"
@@ -20,7 +22,7 @@ def convert_bits(size, units):
     kilobits = float(size)
     
     if units == 'kb':
-         return kilobits
+        return kilobits
     elif units == 'kB':
         return kilobits * 8
     elif units == 'MB':
@@ -44,10 +46,19 @@ def download_time(file_size, file_units, bandwidth, bandwidth_units):
     
     time_taken = file_size / bandwidth
     return convert_seconds(time_taken)
-    
+
+def main():
+    parser = argparse.ArgumentParser(description = "Estimator-Download-time")
+    parser.add_argument("fsize", help = "File Size", type = int)
+    parser.add_argument("funit", nargs = "?", default = "MB", help = "File Units")
+    parser.add_argument("bwidth", help = "Bandwith", type = int)
+    parser.add_argument("bunit", nargs = "?", default = "Mb", help = "Bandwith Units")
+
+    args = parser.parse_args()
+
+    print ("{}".format(download_time(args.fsize, args.funit, args.bwidth, args.bunit)))
 
 if __name__ == '__main__':
-    print (download_time(1,'GB', 2, 'Mb'))
-#>>> 1 hour, 8 minutes, 16.0 seconds
-
-
+    #print (download_time(1,'GB', 2, 'Mb'))
+    #>>> 1 hour, 8 minutes, 16.0 seconds
+    main()
