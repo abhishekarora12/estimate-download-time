@@ -1,22 +1,20 @@
-#estimate-download-time
+estimate-download-time
 -----------------------
 Calculate estimated download time based on your bandwidth!
 
-##Clone the source
+Clone the source
 ------------------
 ::
 
     git clone https://github.com/abhishekarora12/estimate-download-time.git
     cd estimate-download-time
 
-##Instructions
+Instructions
 --------------
-::
+* ``python3 main.py`` followed by arguments
+* ``python3 main.py -h`` for help
 
-    * ``python3 main.py`` followed by arguments
-    * ``python3 main.py -h`` for help
-
-##Testing
+Testing
 ---------
 ``python3 -m unittest discover``
 
