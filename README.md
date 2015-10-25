@@ -4,10 +4,8 @@ Calculate estimated download time based on your bandwidth!
 
 Clone the source
 ------------------
-::
-
-    git clone https://github.com/abhishekarora12/estimate-download-time.git
-    cd estimate-download-time
+* ``git clone https://github.com/abhishekarora12/estimate-download-time.git``
+* ``cd estimate-download-time``
 
 Instructions
 --------------
